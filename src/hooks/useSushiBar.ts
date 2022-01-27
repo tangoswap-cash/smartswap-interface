@@ -1,0 +1,47 @@
+import { Currency, CurrencyAmount, Token } from '@tangoswapcash/sdk'
+
+import { useCallback } from 'react'
+import { useSushiBarContract } from './useContract'
+import { useTransactionAdder } from '../state/transactions/hooks'
+import { getGasPrice } from '../functions/trade'
+
+const useSushiBar = () => {
+  const addTransaction = useTransactionAdder()
+  const barContract = useSushiBarContract()
+
+  const enter = useCallback(
+    async (amount: CurrencyAmount<Token> | undefined) => {
+      if (amount?.quotient) {
+        try {
+          const tx = await barContract?.enter(amount?.quotient.toString(), {
+            gasPrice: getGasPrice(),
+          })
+          return addTransaction(tx, { summary: 'Staked TANGO' })
+        } catch (e) {
+          return e
+        }
+      }
+    },
+    [addTransaction, barContract]
+  )
+
+  const leave = useCallback(
+    async (amount: CurrencyAmount<Token> | undefined) => {
+      if (amount?.quotient) {
+        try {
+          const tx = await barContract?.leave(amount?.quotient.toString(), {
+            gasPrice: getGasPrice(),
+          })
+          return addTransaction(tx, { summary: 'Unstaked TANGO' })
+        } catch (e) {
+          return e
+        }
+      }
+    },
+    [addTransaction, barContract]
+  )
+
+  return { enter, leave }
+}
+
+export default useSushiBar

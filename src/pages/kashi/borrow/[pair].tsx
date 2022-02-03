@@ -49,7 +49,7 @@ function Pair() {
   return (
     <>
       <Head>
-        <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)} | Tango</title>
+        <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)} | SmartSwap</title>
         <meta
           key="description"
           name="description"

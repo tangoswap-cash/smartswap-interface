@@ -34,7 +34,7 @@ function Borrow() {
   return (
     <>
       <Head>
-        <title>{i18n._(t`Borrow`)} | Tango</title>
+        <title>{i18n._(t`Borrow`)} | SmartSwap</title>
         <meta
           key="description"
           name="description"

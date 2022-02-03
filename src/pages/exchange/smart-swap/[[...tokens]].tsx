@@ -71,6 +71,7 @@ import { useRouter } from 'next/router'
 import { useSmartSwapCallback } from '../../../hooks/useSmartSwapCallback'
 import { useUSDCValue } from '../../../hooks/useUSDCPrice'
 import { warningSeverity } from '../../../functions/prices'
+import Image from 'next/image'
 
 export default function Swap() {
   const { i18n } = useLingui()
@@ -435,12 +436,12 @@ export default function Swap() {
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>{i18n._(t`TANGOswap`)} | TANGOswap</title>
-        {/* <title>{GetRateText({price: trade?.executionPrice, showInverted}) || i18n._(t`TANGOswap`)} | TANGOswap</title> */}
+        <title>SmartSwap</title>
+        {/* <title>{GetRateText({price: trade?.executionPrice, showInverted}) || i18n._(t`SmartSwap`)} | SmartSwap</title> */}
         <meta
           key="description"
           name="description"
-          content="TANGOswap allows for swapping of SEP20 compatible tokens"
+          content="SmartSwap allows for swapping of SEP20 compatible tokens"
         />
       </Head>
       <TokenWarningModal
@@ -707,6 +708,11 @@ export default function Swap() {
           )}
         </div>
       </DoubleGlowShadow>
+
+      {/* <Image src="/smartswap.png" alt="SmartSwap" width="100%" height="73%" layout="responsive" /> */}
+      <div className="relative hidden h-80 lg:block">
+        <Image layout="fill" objectFit="contain" objectPosition="bottom" src="/smartswap.png" alt="" />
+      </div>
 
     </Container>
   )

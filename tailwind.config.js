@@ -19,13 +19,13 @@ module.exports = {
           r: 'to right',
         },
         colors: {
-          'blue-pink': ['#651906', '#BB5E41'],
+          'blue-pink': ['#177f9e', '#1dc79c'],
           'pink-red-light-brown': ['#FE5A75', '#FEC464'],
         },
         background: {
-          'dark-1000': '#0f0808',
-          'dark-900': '#201111',
-          'dark-800': '#312020',
+          'dark-1000': '#08080f',
+          'dark-900': '#111920',
+          'dark-800': '#18849e',
           'dark-pink-red': '#4e3034',
         },
         border: {
@@ -36,31 +36,31 @@ module.exports = {
         },
       },
       colors: {
-        purple: '#8D0000',
-        blue: '#651906',
-        pink: '#BB5E41',
+        purple: '#18849e',
+        blue: '#177f9e',
+        pink: '#1dc79c',
         green: '#7cff6b',
         red: '#ff3838',
         yellow: '#ffd166',
 
         'opaque-blue': '#84000080',
-        'opaque-pink': '#BB5E4180',
+        'opaque-pink': '#1dc79c80',
         'pink-red': '#FE5A75',
         'light-brown': '#FEC464',
         'light-yellow': '#FFD166',
         'cyan-blue': '#FFBEAA',
         'dark-pink': '#221825',
         'dark-blue': '#0F182A',
-        'dark-1000': '#0f0808',
-        'dark-900': '#201111',
+        'dark-1000': '#08080f',
+        'dark-900': '#020c10',
         'dark-850': '#1d1e2c',
-        'dark-800': '#312020',
-        'dark-700': '#4a3030',
+        'dark-800': '#051e26',
+        'dark-700': '#072c36',
         'dark-600': '#1C2D49',
         'dark-500': '#223D5E',
         'low-emphesis': '#575757',
         primary: '#BFBFBF',
-        secondary: '#EBB8B8',
+        secondary: '#1dc79c',
         'high-emphesis': '#E3E3E3',
       },
       lineHeight: {
@@ -153,7 +153,7 @@ module.exports = {
       addUtilities({
         '.header-border-b': {
           background:
-            'linear-gradient(to right, #651906 0%, #BB5E41 100%) left bottom no-repeat',
+            'linear-gradient(to right, #177f9e 0%, #1dc79c 100%) left bottom no-repeat',
           backgroundSize: '100% 1px',
         },
       })

@@ -41,7 +41,7 @@ function Balances() {
   return (
     <>
       <Head>
-        <title>Balances | Tango</title>
+        <title>Balances | SmartSwap</title>
         <meta key="description" name="description" content="" />
       </Head>
       <Card

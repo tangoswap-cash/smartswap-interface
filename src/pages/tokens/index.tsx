@@ -5,7 +5,7 @@ export default function Tokens() {
   return (
     <Container id="tokens-page" className="py-4 md:py-8 lg:py-12" maxWidth="full">
       <Head>
-        <title>Tokens | Tango</title>
+        <title>Tokens | SmartSwap</title>
         <meta key="description" name="description" content="TANGOswap tokens." />
       </Head>
     </Container>

@@ -214,7 +214,7 @@ function LimitOrder() {
   return (
     <Container id="limit-order-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>{i18n._(t`Limit order`)} | Tango</title>
+        <title>{i18n._(t`Limit order`)} | SmartSwap</title>
         <meta
           name="description"
           content="TANGOswap allows for swapping of SEP20 compatible tokens"

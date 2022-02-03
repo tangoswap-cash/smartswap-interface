@@ -15,7 +15,7 @@ export default function Status({ initialData }) {
   return (
     <Container id="status-page" className="py-4 md:py-8 lg:py-12" maxWidth="full">
       <Head>
-        <title>Status | Tango</title>
+        <title>Status | SmartSwap</title>
         <meta key="description" name="description" content="Tango Status..." />
       </Head>
       {/* <div className="w-full max-w-6xl mx-auto">

@@ -6,7 +6,7 @@ export default function Analytics() {
   return (
     <Container maxWidth="full" className="grid h-full grid-cols-4 mx-auto gap-9">
       <Head>
-        <title>Analytics Dashboard | Tango</title>
+        <title>Analytics Dashboard | SmartSwap</title>
         <meta name="description" content="TANGO Analytics Dashboard by TANGO..." />
       </Head>
 

@@ -40,20 +40,12 @@ function AppBar(): JSX.Element {
             <div className="px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Image src="/logo.png" alt="Tango" width="48px" height="48px" />
-                  <TangoPrice />
+                  { <Image src="/logo.png" alt="Tango" width="48px" height="48px" />
+                  }
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
                       {/* <Buy /> */}
-                      <NavLink href="/swap">
-                        <a
-                          id={`swap-nav-link`}
-                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                        >
-                          {i18n._(t`Swap`)}
-                        </a>
-                      </NavLink>
-                      <NavLink href="/smart-swap">
+                      <NavLink href="/">
                         <a
                           id={`swap-nav-link`}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -61,112 +53,22 @@ function AppBar(): JSX.Element {
                           {i18n._(t`SmartSwap`)}
                         </a>
                       </NavLink>
-                      <NavLink href="/pool">
+                      <NavLink href="https://tangoswap.cash/farm">
                         <a
-                          id={`pool-nav-link`}
+                          id={`invest-nav-link`}
+                          // href={'https://tangoswap.cash/farm'}
+                          target={"_blank"}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
-                          {i18n._(t`Pool`)}
+                          {i18n._(t`Invest`)}
                         </a>
                       </NavLink>
-                      {chainId && featureEnabled(Feature.MIGRATE, chainId) && (
-                        <NavLink href={'/migrate'}>
-                          <a
-                            id={`migrate-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                          >
-                            {i18n._(t`Migrate`)}
-                          </a>
-                        </NavLink>
-                      )}
-                      {chainId && featureEnabled(Feature.LIQUIDITY_MINING, chainId) && (
-                        <NavLink href={'/farm'}>
-                          <a
-                            id={`farm-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                          >
-                            {i18n._(t`Farm`)}
-                          </a>
-                        </NavLink>
-                      )}
-                      {chainId && featureEnabled(Feature.KASHI, chainId) && (
-                        <>
-                          <NavLink href={'/lend'}>
-                            <a
-                              id={`lend-nav-link`}
-                              className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                            >
-                              {i18n._(t`Lend`)}
-                            </a>
-                          </NavLink>
-                          <NavLink href={'/borrow'}>
-                            <a
-                              id={`borrow-nav-link`}
-                              className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                            >
-                              {i18n._(t`Borrow`)}
-                            </a>
-                          </NavLink>
-                        </>
-                      )}
-                      {chainId && featureEnabled(Feature.STAKING, chainId) && (
-                        <NavLink href={'/stake'}>
-                          <a
-                            id={`stake-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                          >
-                            {i18n._(t`Stake`)}
-                          </a>
-                        </NavLink>
-                      )}
-                      {/* {chainId && featureEnabled(Feature.ANALYTICS, chainId) && (
-                        <ExternalLink
-                          id={`analytics-nav-link`}
-                          href={ANALYTICS_URL[chainId] || 'https://analytics.tangoswap.cash'}
-                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                        >
-                          {i18n._(t`Analytics`)}
-                        </ExternalLink>
-                      )} */}
                     </div>
                   </div>
                 </div>
 
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
-                    {chainId && [ChainId.SMARTBCH].includes(chainId) && library && library.provider.isMetaMask && (
-                      <>
-                        <AddToken
-                          imageProps={{src: "/images/tokens/xtango-square.png", alt: "xTANGO"}}
-                          text={i18n._(t`Add xTANGO to your MetaMask wallet`)}
-                          metamaskProps={{
-                            address: '0x98Ff640323C059d8C4CB846976973FEEB0E068aA',
-                            symbol: 'xTANGO',
-                            decimals: 18,
-                            image: 'https://raw.githubusercontent.com/tangoswap-cash/assets/master/blockchains/smartbch/assets/0x98Ff640323C059d8C4CB846976973FEEB0E068aA/logo.png',
-                          }} />
-                      </>
-                    )}
-
-                    {chainId && chainId in TANGO_ADDRESS && library && library.provider.isMetaMask && (
-                      <>
-                        <AddToken
-                          imageProps={{src: "/images/tokens/tango-square.png", alt: "TANGO"}}
-                          text={i18n._(t`Add TANGO to your MetaMask wallet`)}
-                          metamaskProps={{
-                            address: TANGO_ADDRESS[chainId],
-                            symbol: 'TANGO',
-                            decimals: 18,
-                            image: 'https://raw.githubusercontent.com/tangoswap-cash/assets/master/blockchains/smartbch/assets/0x73BE9c8Edf5e951c9a0762EA2b1DE8c8F38B5e91/logo.png',
-                          }} />
-                      </>
-                    )}
-
-                    {/* {library && library.provider.isMetaMask && (
-                      <div className="hidden sm:inline-block">
-                        <Web3Network />
-                      </div>
-                    )} */}
 
                     <div className="w-auto flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
                       {account && chainId && userEthBalance && (

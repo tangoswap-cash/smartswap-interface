@@ -75,7 +75,7 @@ export default function PoolFinder() {
   return (
     <Container id="find-pool-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>{i18n._(t`Find Pool`)} | Tango</title>
+        <title>{i18n._(t`Find Pool`)} | SmartSwap</title>
         <meta key="description" name="description" content="Find pool" />
       </Head>
       <div className="p-4 mb-3 space-y-3">

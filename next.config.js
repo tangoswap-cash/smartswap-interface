@@ -40,57 +40,15 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/smart-swap',
-        permanent: true,
-      },
-
-      {
-        source: '/yield',
-        destination: '/farm',
-        permanent: true,
-      },
-      // Analytics
-      {
-        source: '/analytics',
-        destination: '/analytics/dashboard',
-        permanent: true,
-      },
-      {
-        source: '/portfolio',
-        destination: '/analytics/portfolio',
-        permanent: true,
-      },
-    ]
-  },
   async rewrites() {
     return [
       {
-        source: '/stake',
-        destination: '/bar',
+        source: '/',
+        destination: '/exchange/smart-swap',
       },
       {
-        source: '/add/:token*',
-        destination: '/exchange/add/:token*',
-      },
-      {
-        source: '/remove/:token*',
-        destination: '/exchange/remove/:token*',
-      },
-      {
-        source: '/create/:token*',
-        destination: '/exchange/add/:token*',
-      },
-      {
-        source: '/swap',
-        destination: '/exchange/swap',
-      },
-      {
-        source: '/swap/:token*',
-        destination: '/exchange/swap/:token*',
+        source: '/:token*',
+        destination: '/exchange/smart-swap/:token*',
       },
       {
         source: '/smart-swap',
@@ -99,14 +57,6 @@ const nextConfig = {
       {
         source: '/smart-swap/:token*',
         destination: '/exchange/smart-swap/:token*',
-      },
-      {
-        source: '/pool',
-        destination: '/exchange/pool',
-      },
-      {
-        source: '/find',
-        destination: '/exchange/find',
       },
     ]
   },

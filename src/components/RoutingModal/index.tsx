@@ -6,6 +6,8 @@ import RoutingCurrencyBox from "../RoutingCurrencyBox";
 import { Currency } from "@tangoswapcash/sdk";
 import { groupBy } from "lodash";
 import { PARTS } from "../../hooks/useSmartTrades";
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 const getDistribution = (distribution: string[], parts: number = PARTS) => {
   const swapOptions = [
@@ -50,10 +52,11 @@ interface RoutingModalProps {
 
 const RoutingModal: FC<RoutingModalProps> = ({ isOpen, setIsOpen, inputCurrency, outputCurrency, distribution }) => {
   const routingDistribution = groupBy(getDistribution(distribution), "currency");
+  const { i18n } = useLingui()
 
   return (
     <Modal isOpen={isOpen} onDismiss={() => setIsOpen(false)} maxWidth={700}>
-      <ModalHeader onClose={() => setIsOpen(false)} title="Routing" />
+      <ModalHeader onClose={() => setIsOpen(false)} title={i18n._(t`Routing`)} />
       <div className="max-w-full overflow-x-auto">
         <div className="flex justify-between items-center w-[650px] md:w-full">
           <div className="input-currency">
@@ -70,7 +73,7 @@ const RoutingModal: FC<RoutingModalProps> = ({ isOpen, setIsOpen, inputCurrency,
         </div>
       </div>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         .swap-container::after {
           content: "";
           position: absolute;
@@ -89,7 +92,31 @@ const RoutingModal: FC<RoutingModalProps> = ({ isOpen, setIsOpen, inputCurrency,
           bottom: 0;
           left: -110px;
         }
+      `}</style> */}
+
+
+      <style jsx>{`
+        .swap-container::after {
+          content: "";
+          position: absolute;
+          width: 1px;
+          background: linear-gradient(180deg, #177f9e 2%, #1dc79c 100%);
+          top: 0;
+          bottom: 0;
+          right: -110px;
+        }
+        .swap-container::before {
+          content: "";
+          position: absolute;
+          width: 1px;
+          background: linear-gradient(180deg, #1dc79c 2%, #177f9e 100%);
+          top: 0;
+          bottom: 0;
+          left: -110px;
+        }
       `}</style>
+
+
     </Modal>
   )
 }

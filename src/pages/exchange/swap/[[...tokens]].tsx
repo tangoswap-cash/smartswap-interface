@@ -429,8 +429,8 @@ export default function Swap() {
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>{i18n._(t`TANGOswap`)} | TANGOswap</title>
-        {/* <title>{GetRateText({price: trade?.executionPrice, showInverted}) || i18n._(t`TANGOswap`)} | TANGOswap</title> */}
+        <title>{i18n._(t`TANGOswap`)} | SmartSwapswap</title>
+        {/* <title>{GetRateText({price: trade?.executionPrice, showInverted}) || i18n._(t`TANGOswap`)} | SmartSwapswap</title> */}
         <meta
           key="description"
           name="description"

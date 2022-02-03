@@ -467,7 +467,7 @@ export default function Farm(): JSX.Element {
   return (
     <Container id="farm-page" className="lg:grid lg:grid-cols-4 h-full py-4 mx-auto md:py-8 lg:py-12 gap-9" maxWidth="7xl">
       <Head>
-        <title>Farm | Tango</title>
+        <title>Farm | SmartSwap</title>
         <meta key="description" name="description" content="Farm TANGO" />
       </Head>
       <div className={classNames('px-3 md:px-0 lg:block md:col-span-1')}>

@@ -11,7 +11,7 @@ function MISO() {
   return (
     <>
       <Head>
-        <title>MISO | Tango</title>
+        <title>MISO | SmartSwap</title>
         <meta key="description" name="description" content="MISO by Tango, an initial Tango offering on steroids ..." />
       </Head>
       <div
@@ -101,23 +101,23 @@ function MISO() {
               <Article
                 title={`How does a batch auction work?`}
                 content={`In this auction, 20 of $LSD is on sale. This amount will be divided amongst all
-                          the contributors at the end of the auction, weighted according to their contribution to the pool. 
-                          Whatever your percentage of the total raise, that's the portion of the total tokens on 
+                          the contributors at the end of the auction, weighted according to their contribution to the pool.
+                          Whatever your percentage of the total raise, that's the portion of the total tokens on
                           offer you will receive. The more you invest the more you get.`}
               />
 
               <Article
                 title={`How do I participate?`}
-                content={`The auction receives $SUSHI as its payment token currency. Go to auction page, 
-                          commit the amount of $SUSHI you’d like and claim your purchase after the 
+                content={`The auction receives $SUSHI as its payment token currency. Go to auction page,
+                          commit the amount of $SUSHI you’d like and claim your purchase after the
                           auction finishes.`}
               />
 
               <Article
                 title={`Learn more about MISO`}
-                content={`MISO is a suite of open-source smart contracts created to ease the process of launching 
-                          a new project on the TANGOswap exchange. MISO aims to drive new capital and trade to the exchange 
-                          by increasing the attractiveness of TANGOswap as a place for token creators and communities to launch 
+                content={`MISO is a suite of open-source smart contracts created to ease the process of launching
+                          a new project on the TANGOswap exchange. MISO aims to drive new capital and trade to the exchange
+                          by increasing the attractiveness of TANGOswap as a place for token creators and communities to launch
                           new project tokens.`}
               />
             </div>

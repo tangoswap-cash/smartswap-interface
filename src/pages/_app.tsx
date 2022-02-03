@@ -113,13 +113,13 @@ function MyApp({
         <meta
           key="description"
           name="description"
-          content="Trade, launch, stake, farm, invest, automate, build on the premier DeFi platform of smartBCH"
+          content="Just Swap at the best price"
         />
 
-        <meta name="application-name" content="TANGO App" />
+        <meta name="application-name" content="SmartSwap" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="TANGO App" />
+        <meta name="apple-mobile-web-app-title" content="SmartSwap" />
 
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -128,23 +128,23 @@ function MyApp({
         <meta name="theme-color" content="#F338C3" />
 
         <meta key="twitter:card" name="twitter:card" content="app" />
-        <meta key="twitter:title" name="twitter:title" content="TANGO App" />
-        <meta key="twitter:url" name="twitter:url" content="https://tangoswap.cash" />
+        <meta key="twitter:title" name="twitter:title" content="SmartSwap" />
+        <meta key="twitter:url" name="twitter:url" content="https://smartswap.fi" />
         <meta
           key="twitter:description"
           name="twitter:description"
-          content="Trade, launch, stake, farm, invest, automate, build on the premier DeFi platform of smartBCH"
+          content="Just Swap at the best price"
         />
-        <meta key="twitter:image" name="twitter:image" content="https://tangoswap.cash/icons/icon-192x192.png" />
+        <meta key="twitter:image" name="twitter:image" content="https://smartswap.fi/icons/icon-256x256.png" />
         <meta key="twitter:creator" name="twitter:creator" content="@tangoswapcash" />
         <meta key="og:type" property="og:type" content="website" />
-        <meta key="og:site_name" property="og:site_name" content="TANGO App" />
-        <meta key="og:url" property="og:url" content="https://tangoswap.cash" />
-        <meta key="og:image" property="og:image" content="https://tangoswap.cash/apple-touch-icon.png" />
+        <meta key="og:site_name" property="og:site_name" content="SmartSwap" />
+        <meta key="og:url" property="og:url" content="https://smartswap.fi" />
+        <meta key="og:image" property="og:image" content="https://smartswap.fi/apple-touch-icon.png" />
         <meta
           key="og:description"
           property="og:description"
-          content="Trade, launch, stake, farm, invest, automate, build on the premier DeFi platform of smartBCH"
+          content="Just Swap at the best price"
         />
       </Head>
       <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>

@@ -81,7 +81,7 @@ export default class MyDocument extends Document {
                 _paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 (function() {
-                  var u="//matomo.tangoswap.cash/";
+                  var u="//matomo.smartswap.fi/";
                   _paq.push(['setTrackerUrl', u+'matomo.php']);
                   _paq.push(['setSiteId', '1']);
                   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];

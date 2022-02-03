@@ -60,7 +60,7 @@ function AppBar(): JSX.Element {
                           target={"_blank"}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
-                          {i18n._(t`Invest`)}
+                          {i18n._(t`Get Yield`)}
                         </a>
                       </NavLink>
                     </div>
@@ -87,6 +87,7 @@ function AppBar(): JSX.Element {
                   </div>
                 </div>
                 <div className="flex -mr-2 sm:hidden">
+
                   {/* Mobile language switch */}
                   {isMobile && (
                     <>
@@ -95,8 +96,9 @@ function AppBar(): JSX.Element {
                       </div>
                     </>
                   )}
+
                   {/* Mobile menu button */}
-                  <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">
+                  {/* <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">
                     <span className="sr-only">{i18n._(t`Open main menu`)}</span>
                     {open ? (
                       <svg
@@ -127,7 +129,7 @@ function AppBar(): JSX.Element {
                       </svg>
                       // <Burger title="Burger" className="block w-6 h-6" aria-hidden="true" />
                     )}
-                  </Popover.Button>
+                  </Popover.Button> */}
                 </div>
               </div>
             </div>

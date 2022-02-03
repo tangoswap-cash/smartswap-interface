@@ -55,7 +55,7 @@ function AppBar(): JSX.Element {
                       </NavLink>
                       <NavLink href="https://tangoswap.cash/farm">
                         <a
-                          id={`invest-nav-link`}
+                          id={`get-yield-nav-link`}
                           // href={'https://tangoswap.cash/farm'}
                           target={"_blank"}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -98,7 +98,7 @@ function AppBar(): JSX.Element {
                   )}
 
                   {/* Mobile menu button */}
-                  {/* <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">
+                  <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">
                     <span className="sr-only">{i18n._(t`Open main menu`)}</span>
                     {open ? (
                       <svg
@@ -129,96 +129,29 @@ function AppBar(): JSX.Element {
                       </svg>
                       // <Burger title="Burger" className="block w-6 h-6" aria-hidden="true" />
                     )}
-                  </Popover.Button> */}
+                  </Popover.Button>
                 </div>
               </div>
             </div>
 
             <Popover.Panel className="sm:hidden">
               <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">
-                <Link href={'/swap'}>
+                <Link href={'/'}>
                   <a
                     id={`swap-nav-link`}
                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                   >
-                    {i18n._(t`Swap`)}
+                    {i18n._(t`SmartSwap`)}
                   </a>
                 </Link>
-                <Link href={'/pool'}>
+                <Link href={'https://tangoswap.cash/farm'}>
                   <a
-                    id={`pool-nav-link`}
+                    id={`get-yield-nav-link`}
                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                   >
-                    {i18n._(t`Pool`)}
+                    {i18n._(t`Get Yield`)}
                   </a>
                 </Link>
-
-
-                {chainId && featureEnabled(Feature.MIGRATE, chainId) && (
-                <Link href={'/migrate'}>
-                  <a
-                    id={`migrate-nav-link`}
-                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                  >
-                    {i18n._(t`Migrate`)}
-                  </a>
-                </Link>
-                )}
-
-                {chainId && featureEnabled(Feature.LIQUIDITY_MINING, chainId) && (
-                  <Link href={'/farm'}>
-                    <a
-                      id={`farm-nav-link`}
-                      className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                    >
-                      {' '}
-                      {i18n._(t`Farm`)}
-                    </a>
-                  </Link>
-                )}
-
-                {chainId && featureEnabled(Feature.KASHI, chainId) && (
-                  <>
-                    <Link href={'/lend'}>
-                      <a
-                        id={`lend-nav-link`}
-                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                      >
-                        {i18n._(t`Lend`)}
-                      </a>
-                    </Link>
-
-                    <Link href={'/borrow'}>
-                      <a
-                        id={`borrow-nav-link`}
-                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                      >
-                        {i18n._(t`Borrow`)}
-                      </a>
-                    </Link>
-                  </>
-                )}
-
-                {chainId && featureEnabled(Feature.STAKING, chainId) && (
-                  <Link href={'/stake'}>
-                    <a
-                      id={`stake-nav-link`}
-                      className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                    >
-                      {i18n._(t`Stake`)}
-                    </a>
-                  </Link>
-                )}
-
-                {/* {chainId && featureEnabled(Feature.ANALYTICS, chainId) && (
-                  <ExternalLink
-                    id={`analytics-nav-link`}
-                    href={ANALYTICS_URL[chainId] || 'https://analytics.tangoswap.cash'}
-                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                  >
-                    {i18n._(t`Analytics`)}
-                  </ExternalLink>
-                )} */}
               </div>
             </Popover.Panel>
           </>

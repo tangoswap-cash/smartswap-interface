@@ -709,7 +709,16 @@ export default function Swap() {
         </div>
       </DoubleGlowShadow>
 
+      <div className="w-full border-1 border-pink py-3 mt-6 text-center border border-pink rounded">
+        <h2 className="font-bold text-2xl">Just Swap at the best price </h2>
+        <p className="font-bold w-10/12 mx-auto mt-2">
+          SmartSwap sources liquidity from all DEXes and is capable of splitting a single trade across multiple DEXes to ensure the best price.
+        </p>
+        <p></p>
+      </div>
+
       {/* <Image src="/smartswap.png" alt="SmartSwap" width="100%" height="73%" layout="responsive" /> */}
+
       <div className="relative hidden h-80 lg:block">
         <Image layout="fill" objectFit="contain" objectPosition="bottom" src="/smartswap.png" alt="" />
       </div>

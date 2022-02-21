@@ -1,11 +1,4 @@
-import {
-  ChainId,
-  Currency,
-  CurrencyAmount,
-  JSBI,
-  Token,
-  TradeSmart
-} from '@tangoswapcash/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, Token, TradeSmart } from '@tangoswapcash/sdk'
 import { ApprovalState, useApproveCallbackFromTradeSmart } from '../../../hooks/useApproveCallback'
 import { ArrowWrapper, BottomGrouping, SwapCallbackError } from '../../../features/exchange-v1/swap/styleds'
 import { ButtonConfirmed, ButtonError } from '../../../components/Button'
@@ -51,7 +44,7 @@ import ProgressSteps from '../../../components/ProgressSteps'
 import SwapHeader from '../../../features/trade/Header'
 import TokenWarningModal from '../../../modals/TokenWarningModal'
 import { default as TradePrice, GetRateText } from '../../../features/exchange-v1/swap/TradePrice'
-import SmartSwapRouting from "../../../features/exchange-v1/swap/SmartSwapRouting"
+import SmartSwapRouting from '../../../features/exchange-v1/swap/SmartSwapRouting'
 import Typography from '../../../components/Typography'
 import UnsupportedCurrencyFooter from '../../../features/exchange-v1/swap/UnsupportedCurrencyFooter'
 import Web3Connect from '../../../components/Web3Connect'
@@ -72,6 +65,8 @@ import { useSmartSwapCallback } from '../../../hooks/useSmartSwapCallback'
 import { useUSDCValue } from '../../../hooks/useUSDCPrice'
 import { warningSeverity } from '../../../functions/prices'
 import Image from 'next/image'
+import BurnedTangoCounter from '../../../components/BurnedTangoCounter'
+import SmartSwapInfo from '../../../modals/SmartSwapInfo'
 
 export default function Swap() {
   const { i18n } = useLingui()
@@ -134,7 +129,7 @@ export default function Swap() {
     currencies,
     inputError: swapInputError,
     allowedSlippage,
-    feePercent
+    feePercent,
   } = useDerivedSmartSwapInfo(doArcher)
 
   const {
@@ -195,7 +190,6 @@ export default function Swap() {
     router.push('/swap/')
   }, [router])
 
-
   // modal and loading
   const [{ showConfirm, tradeToConfirm, swapErrorMessage, attemptingTxn, txHash }, setSwapState] = useState<{
     showConfirm: boolean
@@ -221,7 +215,12 @@ export default function Swap() {
   // console.log("***** trade(1): ", trade)
 
   // check whether the user has approved the aggregator on the input token
-  const [approvalState, approveCallback] = useApproveCallbackFromTradeSmart(trade, allowedSlippage, feePercent, doArcher)
+  const [approvalState, approveCallback] = useApproveCallbackFromTradeSmart(
+    trade,
+    allowedSlippage,
+    feePercent,
+    doArcher
+  )
 
   const signatureData = undefined
 
@@ -267,7 +266,7 @@ export default function Swap() {
     allowedSlippage,
     feePercent,
     // recipient,
-    signatureData,
+    signatureData
     // doArcher ? ttl : undefined
   )
 
@@ -347,7 +346,7 @@ export default function Swap() {
     (approvalState === ApprovalState.NOT_APPROVED ||
       approvalState === ApprovalState.PENDING ||
       (approvalSubmitted && approvalState === ApprovalState.APPROVED))
-      // && !(priceImpactSeverity > 3 && !isExpertMode)
+  // && !(priceImpactSeverity > 3 && !isExpertMode)
 
   const handleConfirmDismiss = useCallback(() => {
     setSwapState({
@@ -419,30 +418,27 @@ export default function Swap() {
   //   }
   // }, [chainId, previousChainId, router]);
 
-
   const [refreshingPrice, setRefreshingPrice] = useState(false)
   const refreshPrice = () => {
-      if(formattedAmounts[Field.INPUT] || formattedAmounts[Field.OUTPUT]){
-        setRefreshingPrice(true)
-        setTimeout(() => {
-          independentField === Field.INPUT
+    if (formattedAmounts[Field.INPUT] || formattedAmounts[Field.OUTPUT]) {
+      setRefreshingPrice(true)
+      setTimeout(() => {
+        independentField === Field.INPUT
           ? handleTypeInput(formattedAmounts[Field.INPUT])
           : handleTypeOutput(formattedAmounts[Field.OUTPUT])
-          setRefreshingPrice(false)
-        }, 700);
-      }
+        setRefreshingPrice(false)
+      }, 700)
+    }
   }
+
+  const [swapInfoOpen, setSwapInfoOpen] = useState(false)
 
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
         <title>SmartSwap</title>
         {/* <title>{GetRateText({price: trade?.executionPrice, showInverted}) || i18n._(t`SmartSwap`)} | SmartSwap</title> */}
-        <meta
-          key="description"
-          name="description"
-          content="SmartSwap allows for swapping of SEP20 compatible tokens"
-        />
+        <meta key="description" name="description" content="SmartSwap allows for swapping of SEP20 compatible tokens" />
       </Head>
       <TokenWarningModal
         isOpen={importTokensNotInDefault.length > 0 && !dismissTokenWarning}
@@ -474,7 +470,7 @@ export default function Swap() {
             onDismiss={handleConfirmDismiss}
             minerBribe={doArcher ? archerETHTip : undefined}
           />
-          <div className={refreshingPrice ? "opacity-40 pointer-events-none" : undefined}>
+          <div className={refreshingPrice ? 'opacity-40 pointer-events-none' : undefined}>
             <CurrencyInputPanel
               // priceImpact={priceImpact}
               label={
@@ -499,8 +495,8 @@ export default function Swap() {
                   className="z-10 -mt-6 -mb-6 rounded-full"
                   onClick={() => {
                     setApprovalSubmitted(false) // reset 2 step UI for approvals
-                    handleTypeInput("") // clear input value
-                    handleTypeOutput("") // clear output value
+                    handleTypeInput('') // clear input value
+                    handleTypeOutput('') // clear output value
                     onSwitchTokens()
                   }}
                 >
@@ -562,9 +558,19 @@ export default function Swap() {
                     setShowInverted={setShowInverted}
                     className="bg-dark-900"
                   />
-                  <SmartSwapRouting outputCurrency={currencies[Field.OUTPUT]} inputCurrency={currencies[Field.INPUT]} distribution={trade?.distribution}/>
+                  <SmartSwapRouting
+                    outputCurrency={currencies[Field.OUTPUT]}
+                    inputCurrency={currencies[Field.INPUT]}
+                    distribution={trade?.distribution}
+                  />
                 </div>
               )}
+            </div>
+            <div className="ml-1 mt-1">
+              <button className="text-sm hover:text-high-emphesis" onClick={() => setSwapInfoOpen(true)}>
+                What is SmartSwap?
+              </button>
+              <SmartSwapInfo isOpen={swapInfoOpen} setIsOpen={setSwapInfoOpen} />
             </div>
           </div>
 
@@ -653,9 +659,7 @@ export default function Swap() {
                       width: '100%',
                     }}
                     id="swap-button"
-                    disabled={
-                      !isValid || approvalState !== ApprovalState.APPROVED
-                    }
+                    disabled={!isValid || approvalState !== ApprovalState.APPROVED}
                     error={isValid}
                   >
                     {i18n._(t`Swap`)}
@@ -682,9 +686,7 @@ export default function Swap() {
                 // error={isValid && !swapCallbackError}
                 error={false}
               >
-                {swapInputError
-                  ? swapInputError
-                  : i18n._(t`Swap`)}
+                {swapInputError ? swapInputError : i18n._(t`Swap`)}
               </ButtonError>
             )}
             {showApproveFlow && (
@@ -709,20 +711,18 @@ export default function Swap() {
         </div>
       </DoubleGlowShadow>
 
-      <div className="w-full border-1 border-pink py-3 mt-6 text-center border border-pink rounded">
-        <h2 className="font-bold text-2xl">Just Swap at the best price</h2>
-        <p className="font-bold w-10/12 mx-auto mt-2">
-          SmartSwap sources liquidity from all DEXes and is capable of splitting a single trade across multiple DEXes to ensure the best price.
-        </p>
-        <p></p>
+      {/* <div className="relative hidden h-20 lg:block">
+        <Image layout="fill" objectFit="contain" objectPosition="bottom" src="/smartswap.png" alt="SmartSwap" />
+      </div> */}
+      <div className="text-center flex items-center absolute bottom-20 lg:bottom-2 right-2">
+        <div className="relative h-24 w-28">
+          <Image layout="fill" objectFit="contain" src="/smartswap.png" alt="Smart Swap" />
+        </div>
       </div>
 
-      {/* <Image src="/smartswap.png" alt="SmartSwap" width="100%" height="73%" layout="responsive" /> */}
-
-      <div className="relative hidden h-80 lg:block">
-        <Image layout="fill" objectFit="contain" objectPosition="bottom" src="/smartswap.png" alt="" />
+      <div className="mt-2 lg:mt-6">
+        <BurnedTangoCounter />
       </div>
-
     </Container>
   )
 }

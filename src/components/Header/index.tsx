@@ -47,10 +47,10 @@ function AppBar(): JSX.Element {
                       {/* <Buy /> */}
                       <NavLink href="/">
                         <a
-                          id={`smart-swap-nav-link`}
+                          id={`swap-nav-link`}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
-                          {i18n._(t`SmartSwap`)} <sup>NEW</sup>
+                          {i18n._(t`SmartSwap`)}
                         </a>
                       </NavLink>
                       <NavLink href="https://tangoswap.cash/farm">
@@ -144,7 +144,6 @@ function AppBar(): JSX.Element {
                     {i18n._(t`SmartSwap`)}
                   </a>
                 </Link>
-
                 <Link href={'https://tangoswap.cash/farm'}>
                   <a
                     id={`get-yield-nav-link`}

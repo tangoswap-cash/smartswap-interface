@@ -143,7 +143,7 @@ function AppBar(): JSX.Element {
                   >
                     {i18n._(t`SmartSwap`)}
                   </a>
-                </Link> */}
+                </Link>
 
                 <Link href={'/smart-swap'}>
                   <a

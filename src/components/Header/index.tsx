@@ -145,14 +145,6 @@ function AppBar(): JSX.Element {
                   </a>
                 </Link>
 
-                <Link href={'/smart-swap'}>
-                  <a
-                    id={`smart-swap-nav-link`}
-                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                  >
-                    {i18n._(t`SmartSwap`)} <sup>NEW</sup>
-                  </a>
-                </Link>
                 <Link href={'https://tangoswap.cash/farm'}>
                   <a
                     id={`get-yield-nav-link`}

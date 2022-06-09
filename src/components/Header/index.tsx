@@ -47,10 +47,10 @@ function AppBar(): JSX.Element {
                       {/* <Buy /> */}
                       <NavLink href="/">
                         <a
-                          id={`swap-nav-link`}
+                          id={`smart-swap-nav-link`}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
-                          {i18n._(t`SmartSwap`)}
+                          {i18n._(t`SmartSwap`)} <sup>NEW</sup>
                         </a>
                       </NavLink>
                       <NavLink href="https://tangoswap.cash/farm">
@@ -142,6 +142,15 @@ function AppBar(): JSX.Element {
                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                   >
                     {i18n._(t`SmartSwap`)}
+                  </a>
+                </Link> */}
+
+                <Link href={'/smart-swap'}>
+                  <a
+                    id={`smart-swap-nav-link`}
+                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                  >
+                    {i18n._(t`SmartSwap`)} <sup>NEW</sup>
                   </a>
                 </Link>
                 <Link href={'https://tangoswap.cash/farm'}>

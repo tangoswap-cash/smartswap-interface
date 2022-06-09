@@ -54,7 +54,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
           }}
         >
           <a className="flex items-center justify-center px-4 text-base font-medium text-center rounded-md text-secondary hover:text-high-emphesis ">
-            {i18n._(t`SmartSwap`)} <sup>NEW</sup>
+            {i18n._(t`SmartSwap`)}
           </a>
         </NavLink> */}
       </div>

@@ -83,9 +83,7 @@ export default function useFarmRewards() {
         // override for mcv2...
         pool.owner.totalAllocPoint = masterChefV1TotalAllocPoint
 
-        const icon = ['0', '3', '4', '8'].includes(pool.id)
-          ? `https://raw.githubusercontent.com/tangoswap-cash/icons/master/token/${pool.rewardToken.symbol.toLowerCase()}.jpg`
-          : `https://raw.githubusercontent.com/tangoswap-cash/assets/master/blockchains/smartbch/assets/${getAddress(
+        const icon = `https://raw.githubusercontent.com/tangoswap-cash/assets/master/blockchains/smartbch/assets/${getAddress(
               pool.rewarder.rewardToken
             )}/logo.png`
 
@@ -121,7 +119,8 @@ export default function useFarmRewards() {
       rewards.reduce((previousValue, currentValue) => {
         return previousValue + currentValue.rewardPerBlock * currentValue.rewardPrice
       }, 0) / tvl
-    console.log({ rewards })
+
+    // console.log({ rewards })
     const roiPerHour = roiPerBlock * blocksPerHour
 
     const roiPerDay = roiPerHour * 24

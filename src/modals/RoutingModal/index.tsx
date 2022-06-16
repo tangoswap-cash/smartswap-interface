@@ -2,7 +2,7 @@ import { FC } from "react";
 import Modal from '../../components/Modal'
 import ModalHeader from '../../components/ModalHeader'
 import CurrencyLogo from "../../components/CurrencyLogo";
-import RoutingCurrencyBox from "../RoutingCurrencyBox";
+import RoutingCurrencyBox from "../../components/RoutingCurrencyBox";
 import { Currency } from "@tangoswapcash/sdk";
 import { groupBy } from "lodash";
 import { PARTS } from "../../hooks/useSmartTrades";
@@ -20,9 +20,9 @@ const getDistribution = (distribution: string[], parts: number = PARTS) => {
       {exchange: "MistSwap", currency: "DIRECT_SWAP"},
       {exchange: "MistSwap", currency: "BCH"},
       {exchange: "MistSwap", currency: "flexUSD"},
-      {exchange: "MuesliSwap", currency: "DIRECT_SWAP"},
-      {exchange: "MuesliSwap", currency: "BCH"},
-      {exchange: "MuesliSwap", currency: "flexUSD"},
+      {exchange: "CowSwap", currency: "DIRECT_SWAP"},
+      {exchange: "CowSwap", currency: "BCH"},
+      {exchange: "CowSwap", currency: "flexUSD"},
       {exchange: "TangoSwap", currency: "DIRECT_SWAP"},
       {exchange: "TangoSwap", currency: "BCH"},
       {exchange: "TangoSwap", currency: "flexUSD"},

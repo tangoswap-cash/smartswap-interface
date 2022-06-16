@@ -1,10 +1,10 @@
-import { FC } from 'react'
+import { FC } from "react";
 import Modal from '../../components/Modal'
 import ModalHeader from '../../components/ModalHeader'
 
 interface SmartSwapInfoProps {
-  isOpen: boolean
-  setIsOpen: (value: boolean) => void
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
 }
 
 const SmartSwapInfo: FC<SmartSwapInfoProps> = ({ isOpen, setIsOpen }) => {

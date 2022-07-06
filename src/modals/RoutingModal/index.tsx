@@ -50,6 +50,36 @@ const getDistribution = (distribution: string[], parts: number = PARTS) => {
       {exchange: "Verse", currency: "BCH"},
       {exchange: "Verse", currency: "flexUSD"},
       {exchange: "Verse", currency: "TANGO"},
+
+      {exchange: "1BCH", currency: "LAW"},
+      {exchange: "BenSwap", currency: "LAW"},
+      {exchange: "MistSwap", currency: "LAW"},
+      {exchange: "CowSwap", currency: "LAW"},
+      {exchange: "TangoSwap", currency: "LAW"},
+      {exchange: "Tropical", currency: "LAW"},
+      {exchange: "EmberSwap", currency: "LAW"},
+      {exchange: "LawSwap", currency: "LAW"},
+      {exchange: "Verse", currency: "LAW"},
+
+      {exchange: "1BCH", currency: "bcUSDT"},
+      {exchange: "BenSwap", currency: "bcUSDT"},
+      {exchange: "MistSwap", currency: "bcUSDT"},
+      {exchange: "CowSwap", currency: "bcUSDT"},
+      {exchange: "TangoSwap", currency: "bcUSDT"},
+      {exchange: "Tropical", currency: "bcUSDT"},
+      {exchange: "EmberSwap", currency: "bcUSDT"},
+      {exchange: "LawSwap", currency: "bcUSDT"},
+      {exchange: "Verse", currency: "bcUSDT"},
+
+      {exchange: "1BCH", currency: "bcBCH"},
+      {exchange: "BenSwap", currency: "bcBCH"},
+      {exchange: "MistSwap", currency: "bcBCH"},
+      {exchange: "CowSwap", currency: "bcBCH"},
+      {exchange: "TangoSwap", currency: "bcBCH"},
+      {exchange: "Tropical", currency: "bcBCH"},
+      {exchange: "EmberSwap", currency: "bcBCH"},
+      {exchange: "LawSwap", currency: "bcBCH"},
+      {exchange: "Verse", currency: "bcBCH"},
     ];
 
   const exchangesDistribution = [];

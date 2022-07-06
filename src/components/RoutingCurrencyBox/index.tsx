@@ -1,6 +1,6 @@
 import { FC } from "react";
 import CurrencyLogo from "../../components/CurrencyLogo";
-import { bcBCH, bcUSDT, FLEXUSD, LAW, TANGO } from '../../config/tokens'
+import { BCBCH, BCUSDT, FLEXUSD, LAW, TANGO } from '../../config/tokens'
 import { WBCH, ChainId, Currency } from '@tangoswapcash/sdk'
 
 interface RoutingCurrencyBoxProps {
@@ -13,8 +13,8 @@ const swapCurrencies = {
   flexUSD: FLEXUSD,
   TANGO: TANGO[ChainId.SMARTBCH],
   LAW: LAW,
-  bcUSDT: bcUSDT,
-  bcBCH: bcBCH,
+  bcUSDT: BCUSDT,
+  bcBCH: BCBCH,
 }
 
 const RoutingCurrencyBox: FC<RoutingCurrencyBoxProps> = ({ currencyGroup, outputCurrency }) => {
